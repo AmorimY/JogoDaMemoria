@@ -6,6 +6,10 @@ var cartas = [
 ]
 
 var cartaClicada;
+var segundaCarta;
+var cartaUm;
+
+let podeClicar = true;
 
 function init() {
     let tabuleiro = document.getElementById('tabuleiro');
@@ -28,20 +32,46 @@ function createCard(carta) {
     return card;
 }
 
+function cons(){
+    console.log("oi")
+}
+
+
 function onClickCard(card) {
-    cartaClicada = card.firstChild
-    let teste = cartaClicada.getAttribute("src") 
-    if (!cartaClicada === cartaClicada){
+    
+       if (!cartaUm){
+        cartaUm = card
+       // cartaUm.firstChild.classList.add("")
+        //cartaUm= card.firstChild.getAttribute("src") 
+        //cartaUm.firstChild.classList.add('virada')
+        return
+        }
+        segundaCarta = card.firstChild.getAttribute("src")
+
+        if(cartaUm === segundaCarta){
+            console.log("cartas iguais")
+        }else{
+            console.log("diferentes")
+        }
+        cartaUm=null
+        segundaCarta = null
+        
+
+
+
+
+    /* 
+
+        if (!cartaClicada {
         console.log("true?")
         
     }else{
         console.log("aaaa")
     }
-
-
-    
+    */
     
 
 }
+
 
 init();
