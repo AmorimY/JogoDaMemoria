@@ -1,0 +1,12 @@
+.carta{
+    background-color: rgb(255, 255, 255);
+    height: 125px;
+    width: 125px;
+    border:4px solid blue ;
+    border-radius:30px;
+    overflow: hidden;
+}
+
+body{
+    background-color: rgb(65, 7, 52);
+}
