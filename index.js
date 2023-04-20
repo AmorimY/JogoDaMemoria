@@ -1,77 +1,57 @@
-var cartas = [
-    "caracol.png",
-    "joaninha.png",
-    "caracol.png",
-    "joaninha.png"
-]
+var cartas = ["caracol.png", "joaninha.png", "caracol.png", "joaninha.png"];
 
-var cartaClicada;
 var segundaCarta;
 var cartaUm;
 
-let podeClicar = true;
+var podeClicar = true;
 
 function init() {
-    let tabuleiro = document.getElementById('tabuleiro');
-    for (let i = 0; i < cartas.length; i++) {
-        let carta = cartas[i];
-        let div = createCard(carta);
-        tabuleiro.appendChild(div);
-
-    }
+  let tabuleiro = document.getElementById("tabuleiro");
+  for (let i = 0; i < cartas.length; i++) {
+    let carta = cartas[i];
+    let div = createCard(carta);
+    tabuleiro.appendChild(div);
+  }
 }
- 
+
 function createCard(carta) {
-    let card = document.createElement('div');
-    let image = document.createElement("img");
-    image.src = carta;
-    card.classList.add("carta");
-    card.appendChild(image);
-    card.setAttribute("onclick", "onClickCard(this)");
+  let card = document.createElement("div");
+  let image = document.createElement("img");
+  image.src = carta;
+  card.classList.add("carta");
+  card.appendChild(image);
+  card.firstChild.classList.add("verso")
+  card.setAttribute("onclick", "onClickCard(this)");
 
-    return card;
-}
-
-function cons(){
-    console.log("oi")
+  return card;
 }
 
 
 function onClickCard(card) {
-    
-       if (!cartaUm){
-        cartaUm = card
-       // cartaUm.firstChild.classList.add("")
-        //cartaUm= card.firstChild.getAttribute("src") 
-        //cartaUm.firstChild.classList.add('virada')
-        return
-        }
-        segundaCarta = card.firstChild.getAttribute("src")
+  if(!card.firstChild.classList.contains("verso")){
+    return
+  }
+  if (!cartaUm) {
+    cartaUm= card
+    cartaUm.firstChild.classList.remove("verso")
+    return
+  }
+  segundaCarta = card
+  segundaCarta.firstChild.classList.remove("verso")
 
-        if(cartaUm === segundaCarta){
-            console.log("cartas iguais")
-        }else{
-            console.log("diferentes")
-        }
-        cartaUm=null
-        segundaCarta = null
-        
-
-
-
-
-    /* 
-
-        if (!cartaClicada {
-        console.log("true?")
-        
-    }else{
-        console.log("aaaa")
-    }
-    */
-    
+  if (cartaUm.firstChild.getAttribute("src") === segundaCarta.firstChild.getAttribute("src")) {
+      console.log("iguais")
+      cartaUm = null;
+      segundaCarta = null;
+  } else {
+    setTimeout(function () {
+      cartaUm.firstChild.classList.add("verso")
+      segundaCarta.firstChild.classList.add("verso")
+      cartaUm = null;
+      segundaCarta = null;
+    },1000)
+  }
 
 }
-
 
 init();

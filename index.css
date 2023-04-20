@@ -1,32 +1,18 @@
-.carta{
-    background-color: rgb(255, 255, 255);
-    height: 125px;
-    width: 125px;
-    border:4px solid blue ;
-    border-radius:30px;
-    overflow: hidden;
-    content: unset;
-    outline: auto;
-    }
-
-  #carta img{
-
-        display: none
-  }  
-
-
-
-body{
-    background-color: rgb(65, 7, 52);
+.carta {
+  background-color: rgb(255, 255, 255);
+  height: 125px;
+  width: 125px;
+  border: 4px solid blue;
+  border-radius: 30px;
+  overflow: hidden;
+  content: unset;
+  outline: auto;
+}
+body {
+  background-color: rgb(65, 7, 52);
 }
 
-
-
-.virada{    background-color: rgb(255, 255, 255);
-    height: 125px;
-    width: 125px;
-    border:4px solid rgb(252, 26, 26) ;
-    border-radius:30px;
-    overflow: hidden;
-
+.verso {
+  visibility: hidden;
 }
+
