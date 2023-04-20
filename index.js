@@ -1,5 +1,39 @@
-var cartas = ["caracol.png", "joaninha.png", "caracol.png", "joaninha.png"];
+var cartas = [
+  "caracol.png",
+  "joaninha.png",
+  "caracol.png",
+  "joaninha.png",
+  "abelha.png",
+  "abelha.png",
+  "libelula.png",
+  "libelula.png",
+  "mosca.png",
+  "mosca.png",
+  "aranha.png",
+  "aranha.png",
+];
 
+function shuffle(cartas) {
+  let currentIndex = cartas.length,
+    randomIndex;
+
+  while (currentIndex != 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [cartas[currentIndex], cartas[randomIndex]] = [
+      cartas[randomIndex],
+      cartas[currentIndex],
+    ];
+  }
+  return cartas;
+}
+
+shuffle(cartas);
+
+var pontuacao = 0;
 var segundaCarta;
 var cartaUm;
 
@@ -12,6 +46,8 @@ function init() {
     let div = createCard(carta);
     tabuleiro.appendChild(div);
   }
+  document.getElementById("informacoes").innerHTML = "Pontuação: " + pontuacao;
+
 }
 
 function createCard(carta) {
@@ -20,38 +56,48 @@ function createCard(carta) {
   image.src = carta;
   card.classList.add("carta");
   card.appendChild(image);
-  card.firstChild.classList.add("verso")
+  card.firstChild.classList.add("verso");
   card.setAttribute("onclick", "onClickCard(this)");
 
   return card;
 }
 
-
 function onClickCard(card) {
-  if(!card.firstChild.classList.contains("verso")){
-    return
+  if (!podeClicar || !card.firstChild.classList.contains("verso")) {
+    return;
   }
   if (!cartaUm) {
-    cartaUm= card
-    cartaUm.firstChild.classList.remove("verso")
-    return
+    cartaUm = card;
+    cartaUm.firstChild.classList.remove("verso");
+    return;
   }
-  segundaCarta = card
-  segundaCarta.firstChild.classList.remove("verso")
+  segundaCarta = card;
+  segundaCarta.firstChild.classList.remove("verso");
+  podeClicar = false;
 
-  if (cartaUm.firstChild.getAttribute("src") === segundaCarta.firstChild.getAttribute("src")) {
-      console.log("iguais")
-      cartaUm = null;
-      segundaCarta = null;
+  if (
+    cartaUm.firstChild.getAttribute("src") ===
+    segundaCarta.firstChild.getAttribute("src")
+  ) {
+    cartaUm = null;
+    segundaCarta = null;
+    podeClicar = true;
+    pontuacao++;
+    document.getElementById("informacoes").innerHTML =
+      "Pontuação: " + pontuacao;
   } else {
     setTimeout(function () {
-      cartaUm.firstChild.classList.add("verso")
-      segundaCarta.firstChild.classList.add("verso")
+      cartaUm.firstChild.classList.add("verso");
+      segundaCarta.firstChild.classList.add("verso");
       cartaUm = null;
       segundaCarta = null;
-    },1000)
+      podeClicar = true;
+    }, 800);
   }
+}
 
+function recarrega() {
+  location.reload();
 }
 
 init();

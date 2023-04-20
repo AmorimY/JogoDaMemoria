@@ -1,18 +1,73 @@
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 .carta {
-  background-color: rgb(255, 255, 255);
-  height: 125px;
-  width: 125px;
-  border: 4px solid blue;
-  border-radius: 30px;
+  background-color: #5ed939;
+  background-image: url();
+  border: 4px solid rgb(0, 0, 0);
+  border-radius: 10px;
   overflow: hidden;
-  content: unset;
-  outline: auto;
+  width: 130px;
+  height: 145px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 7px;
 }
 body {
-  background-color: rgb(65, 7, 52);
+    height: fit-content;
 }
+
+.tabuleiro{
+ display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /*grid-template-rows: repeat(4, 1fr) */
+  width: fit-content;
+  height: fit-content;
+  columns: 1;
+  
+
+  
+}
+
+.mesa{
+
+}
+
+.conteiner{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;}
 
 .verso {
   visibility: hidden;
 }
 
+body {
+    background: rgb(29,143,253);
+    background: linear-gradient(45deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    background-size: 400% 400%;
+        animation: gradient 5s ease infinite;
+        height: 100vh;
+    }
+  
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+
+.informacoes{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
