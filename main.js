@@ -1,16 +1,16 @@
 var cartas = [
-  "caracol.png",
-  "joaninha.png",
-  "caracol.png",
-  "joaninha.png",
-  "abelha.png",
-  "abelha.png",
-  "libelula.png",
-  "libelula.png",
-  "mosca.png",
-  "mosca.png",
-  "aranha.png",
-  "aranha.png",
+  "assets/caracol.png",
+  "assets/joaninha.png",
+  "assets/caracol.png",
+  "assets/joaninha.png",
+  "assets/abelha.png",
+  "assets/abelha.png",
+  "assets/libelula.png",
+  "assets/libelula.png",
+  "assets/mosca.png",
+  "assets/mosca.png",
+  "assets/aranha.png",
+  "assets/aranha.png",
 ];
 
 function shuffle(cartas) {
