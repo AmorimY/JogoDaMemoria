@@ -1,3 +1,21 @@
+@media screen and (max-width :480px) {
+  .conteiner {width: 70vw;
+
+}
+.tabuleiro{
+  width: 100%;
+}
+.carta{
+  width: 100%;
+}
+.mesa{
+  width: 100%;
+}
+.titulo{
+  width: max-content;
+}
+}
+
 html {
     height: 100%;
     margin: 0;
@@ -8,7 +26,7 @@ html {
     padding: 0;
     background: rgb(29, 143, 253);
     background: linear-gradient(
-      45deg,
+      218deg,
       rgba(34, 193, 195, 1) 0%,
       #fdbb2d 100%
     );
@@ -75,7 +93,6 @@ html {
     font-size: 6.6em;
     text-align: center;
     font-family: "Bebas Neue";
-    margin-bottom: 0.9em;
     font-weight: bolder;
     margin-top: 30px;
   }
