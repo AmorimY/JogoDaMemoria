@@ -1,19 +1,19 @@
-@media screen and (max-width :480px) {
-  .conteiner {width:100%;
-
-}
-.tabuleiro{
-  width: 100%;
-}
-.carta{
-  width: 100%;
-}
-.mesa{
-  width: 100%;
-}
-.titulo{
-  width: max-content;
-}
+@media screen and (max-width: 680px) {
+  .conteiner {
+    width: 10em;
+  }
+  .tabuleiro {
+    width: 10em;
+  }
+  .carta {
+    width: 100%;
+  }
+  .mesa {
+    width: 100%;
+  }
+  .titulo {
+    width: max-content;
+  }
 }
 
 html {
